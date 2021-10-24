@@ -12,7 +12,7 @@ public class Postagem {
 
     private String mensagem;
 
-    private PostagemTipo postagemTipo;
+    private ExtensaoPostagemTipo postagemTipo;
 
     public Long getId() {
         return id;
@@ -46,11 +46,11 @@ public class Postagem {
         this.mensagem = mensagem;
     }
 
-    public PostagemTipo getPostagemTipo() {
+    public ExtensaoPostagemTipo getPostagemTipo() {
         return postagemTipo;
     }
 
-    public void setPostagemTipo(PostagemTipo postagemTipo) {
+    public void setPostagemTipo(ExtensaoPostagemTipo postagemTipo) {
         this.postagemTipo = postagemTipo;
     }
 }
