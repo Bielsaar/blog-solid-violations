@@ -10,7 +10,6 @@ import java.util.List;
 public class UsuarioServiceImpl implements UsuarioService {
 
     private UsuarioDAO usuarioDAO = new UsuarioDAO("banco.db");
-    private PostagemDAO postagemDAO = new PostagemDAO("banco.db");
 
     @Override
     public void criarUsuario(Usuario usuario) {
@@ -37,32 +36,5 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioDAO.getUsuario(id);
     }
 
-    @Override
-    public void adicionarPostagem(Postagem postagem) {
-        if (postagem.getPostagemTipo().equals(Postagem.PostagemTipo.PUBLICA)) {
-            this.postagemDAO.addPostagemPublica(postagem);
-        } else if (postagem.getPostagemTipo().equals(Postagem.PostagemTipo.PRIVADA)) {
-            this.postagemDAO.addPostagemPrivada(postagem);
-        }
-    }
-
-    @Override
-    public void removerPostagem(Postagem postagem) {
-        this.postagemDAO.deletePostagem(postagem);
-    }
-
-    @Override
-    public void atualizarPostagem(Postagem postagem) {
-        this.postagemDAO.updatePostagem(postagem);
-    }
-
-    @Override
-    public void adicionarResposta(Postagem postagem, Postagem resposta) {
-        PostagemResposta postagemResposta = new PostagemResposta();
-        postagemResposta.setPostagem(postagem);
-        postagemResposta.setUsuario(resposta.getUsuario());
-        postagemResposta.setData(new Date());
-        this.postagemDAO.addPostagemResposta(postagemResposta);
-    }
 
 }
