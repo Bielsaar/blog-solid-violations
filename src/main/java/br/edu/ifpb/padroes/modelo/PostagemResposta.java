@@ -24,8 +24,8 @@ public class PostagemResposta extends Postagem {
         this.data = data;
     }
 
-    @Override
-    public Usuario getUsuario() {
+    //@Override
+    public Usuario getUsuarioSeTiverPostagem() {
         if (usuario.getPostagens().size() == 0) {
             return null;
         }
