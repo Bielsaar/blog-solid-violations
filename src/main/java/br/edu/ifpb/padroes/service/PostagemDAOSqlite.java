@@ -8,11 +8,11 @@ import java.sql.*;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class PostagemDAOSql extends PostagemDAO {
+public class PostagemDAOSqlite extends PostagemDAO {
 
     private Database database;
 
-    public PostagemDAOSql(String arquivoBanco) {
+    public PostagemDAOSqlite(String arquivoBanco) {
         this.database = new Database(arquivoBanco);
     }
 
